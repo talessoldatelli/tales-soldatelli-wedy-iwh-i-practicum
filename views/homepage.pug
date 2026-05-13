@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title= pageTitle
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    main
+      h1= pageTitle
+
+      a(href="/update-cobj") Add to this table
+
+      if error
+        p= error
+
+      if records && records.length
+        table
+          thead
+            tr
+              th Name
+              th Description
+              th Level
+          tbody
+            each record in records
+              tr
+                td= record.properties.name
+                td= record.properties.description
+                td= record.properties.level
+      else
+        p No records found.

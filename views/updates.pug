@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= pageTitle
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    main
+      h1= pageTitle
+
+      a(href="/") Return to the homepage
+
+      form(action="/update-cobj", method="POST")
+        div
+          label(for="name") Name
+          input(type="text", id="name", name="name", required)
+
+        div
+          label(for="description") Description
+          input(type="text", id="description", name="description", required)
+
+        div
+          label(for="level") Level
+          input(type="text", id="level", name="level", required)
+
+        button(type="submit") Create record
